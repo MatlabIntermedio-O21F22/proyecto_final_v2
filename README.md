@@ -57,10 +57,19 @@ Siempre que cambie alguno de los widgets de la GUI, el gráfico y su título deb
 
 A continuación se muestra una captura de pantalla de una implementación de ejemplo. 
 
-![prototipo](./img/prototipo.png)
 
-Demostración de funcionamiento
-[![ScreenShot](./img/demostracion.png)](http://purl.org/matlabintermedio/proyectofinal/demostracion)
+
+<div align="center">
+
+<img src="./img/prototipo.png" >
+
+</div>
+
+
+<div align="center">
+<img src="./img/demostracion.png" >
+<p>Demostración de funcionamiento</p>
+</div>
 
 
 

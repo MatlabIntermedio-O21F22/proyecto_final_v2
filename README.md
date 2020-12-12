@@ -60,15 +60,13 @@ A continuación se muestra una captura de pantalla de una implementación de eje
 
 
 <div align="center">
-
 <img src="./img/prototipo.png" >
-
 </div>
 
 
 <div align="center">
-<p>Demostración de funcionamiento</p>
 <img src="./img/demostracion.png" >
+<p>Demostración de funcionamiento</p>
 </div>
 
 <br/><br/>

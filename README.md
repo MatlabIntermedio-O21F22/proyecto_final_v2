@@ -57,12 +57,21 @@ Siempre que cambie alguno de los widgets de la GUI, el gráfico y su título deb
 
 A continuación se muestra una captura de pantalla de una implementación de ejemplo. 
 
-![prototipo](./img/prototipo.png)
-
-Demostración de funcionamiento
-[![ScreenShot](./img/demostracion.png)](http://purl.org/matlabintermedio/proyectofinal/demostracion)
 
 
+<div align="center">
+
+<img src="./img/prototipo.png" >
+
+</div>
+
+
+<div align="center">
+<p>Demostración de funcionamiento</p>
+<img src="./img/demostracion.png" >
+</div>
+
+<br/><br/>
 
 Tenga en cuenta que tiene flexibilidad para resolver el problema. Solo asegúrese de cumplir con los requisitos anteriores. Puede agregar funciones adicionales si lo desea. Por ejemplo, tener un cuadro de búsqueda, para que el usuario no tenga que desplazarse y buscar países manualmente en el cuadro de lista, sería una buena característica. También sería útil cambiar el rango de fechas para trazar.
 

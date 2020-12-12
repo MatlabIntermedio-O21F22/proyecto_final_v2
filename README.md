@@ -18,7 +18,7 @@
 
 
 ## Entregables
-- **Semana 2 (16 dic.):**  Lectura de datos, definición de clases, visualización 
+- **Semana 2 (16 dic.):**  Lectura de datos, definición de clases, visualización de graficas 
 - **Semana 4 (6 ene.):**   Implementación de widgets 1, 2, 3
 - **Semana 6, (20 ene.):** Implementación de widgets 4, 5
 - **Semana 8, (3 feb.):**  Implementación de widget 6, pruebas, documentación, defensa de proyecto.

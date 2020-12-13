@@ -65,7 +65,9 @@ A continuación se muestra una captura de pantalla de una implementación de eje
 
 
 <div align="center">
+<a href="http://purl.org/matlabintermedio/proyectofinal/demostracion">
 <img src="./img/demostracion.png" >
+</a>
 <p>Demostración de funcionamiento</p>
 </div>
 

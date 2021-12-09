@@ -8,7 +8,7 @@
 - git
 - github
 - MATLAB 2019+
-- gitter (chat privado para consultas puntuales, chat grupal para consultas sobre uso de git o consultas generales)
+- slack (chat privado para consultas puntuales, chat grupal para consultas sobre uso de git o consultas generales)
 
 
 ## Flujo de Trabajo
@@ -18,7 +18,7 @@
 
 
 ## Entregables
-- **Semana 2 (16 dic.):**  Lectura de datos, definición de clases, visualización de graficas 
+- **Semana 2 (16 dic.):**  Selección de funete de datos, lectura de datos, definición de clases, visualización de graficas 
 - **Semana 4 (6 ene.):**   Implementación de widgets 1, 2, 3
 - **Semana 6, (20 ene.):** Implementación de widgets 4, 5
 - **Semana 8, (3 feb.):**  Implementación de widget 6, pruebas, documentación, defensa de proyecto.
@@ -32,7 +32,7 @@
 
 ## Instrucciones
 
-El objetivo del proyecto final es sintetizar una serie de conceptos nuevos aprendidos en este curso y aplicarlos en la práctica para resolver un problema del mundo real. Específicamente, deberá utilizar técnicas de programación orientada a objetos y crear una aplicación con una interfaz gráfica de usuario moderna para procesar y visualizar datos relacionados con COVID-19.
+El objetivo del proyecto final es sintetizar una serie de conceptos nuevos aprendidos en este curso y aplicarlos en la práctica para resolver un problema del mundo real. Específicamente, deberá utilizar técnicas de programación orientada a objetos (recomendado) y crear una aplicación con una interfaz gráfica de usuario moderna para procesar y visualizar datos relacionados a una fuente de datos (Ej. COVID-19).
 
 
 ### Criterios de revisión
@@ -41,7 +41,21 @@ La especificación del problema describe una lista de requisitos sobre la funcio
 
 ### Instrucciones de asignación paso a paso
 
-El objetivo del proyecto final es crear un programa MATLAB que procese y visualice los datos de la pandemia de COVID-19. Los datos (obtenidos del Centro de recursos sobre coronavirus de la Universidad Johns Hopkins) están disponibles en el archivo [.mat](http://purl.org/matlabintermedio/proyectofinal/data) adjunto. Una vez que lo cargue, obtendrá una única variable llamada covid_data que es una gran matriz de celdas. (¡Asegúrese de que su aplicación cargue el archivo!) Contiene los recuentos globales de casos y muertes por país, estado y fecha. Específicamente, la primera fila de la matriz de celdas especifica lo que contiene cada columna: país y estado seguidos de una serie de fechas que comienzan en "22/1/20", es decir, 22 de enero de 2020. No codifique la fecha de finalización, ya que anticipamos actualizar los datos regularmente a medida que avanza el tiempo. Cada celda de datos para un país y una fecha determinada contiene un vector de dos elementos: el primer elemento es el recuento acumulativo de casos, mientras que el segundo es el número acumulativo de muertes.
+El objetivo del proyecto final es crear un programa MATLAB que procese y visualice los datos (Ej. pandemia de COVID-19). 
+
+Sus conjuntos de datos pueden incluir datos recopilados por usted o su laboratorio, o pueden provenir de un repositorio de datos público. Idealmente, su elección de conjunto de datos debería estar impulsada por su investigación.
+
+Si no sabe qué conjunto de datos usar, aquí hay un par de enlaces para comenzar:
+
+- [Datos COVID en Ecuador](https://github.com/andrab/ecuacovid)
+- [Biblioteca de datos de IRI](http://iridl.ldeo.columbia.edu/)
+- [Catálogo de datos de USGS](https://data.usgs.gov/datacatalog/)
+- [Centro Nacional de Datos Climáticos de la NOAA](https://www.ncdc.noaa.gov/)
+- [Datos de Ciencias de la Tierra de la NASA](https://earthdata.nasa.gov/)
+
+El siguiente planteamiento lo debe ajustar a su fuente de datos. El ejemplo que se presenta correponde a datos de la pandemia COVID-19.
+
+Los datos (obtenidos del Centro de recursos sobre coronavirus de la Universidad Johns Hopkins) están disponibles en el archivo [.mat](http://purl.org/matlabintermedio/proyectofinal/data) adjunto. Una vez que lo cargue, obtendrá una única variable llamada covid_data que es una gran matriz de celdas. (¡Asegúrese de que su aplicación cargue el archivo!) Contiene los recuentos globales de casos y muertes por país, estado y fecha. Específicamente, la primera fila de la matriz de celdas especifica lo que contiene cada columna: país y estado seguidos de una serie de fechas que comienzan en "22/1/20", es decir, 22 de enero de 2020. No codifique la fecha de finalización, ya que anticipamos actualizar los datos regularmente a medida que avanza el tiempo. Cada celda de datos para un país y una fecha determinada contiene un vector de dos elementos: el primer elemento es el recuento acumulativo de casos, mientras que el segundo es el número acumulativo de muertes.
 
 Su programa debe convertir estos datos en un conjunto de objetos: un objeto por país y estado. Los estados deben estar contenidos por sus países. Los países se pueden almacenar en un vector de objetos de países en la propia aplicación. Otra forma es crear una instancia de la misma clase que usa para países y estados, llamarla global y hacer que almacene todos los países. Entonces, la aplicación contendría el objeto global único como una propiedad. Esta opción crearía una jerarquía de 3 niveles: el objeto global almacena datos para todo el mundo y un vector de objetos de país, mientras que los objetos de países que tienen estados en la base de datos almacenarían sus estados correspondientes. Nuevamente, puede usar la misma definición de clase para los tres tipos de objetos porque almacenan esencialmente el mismo tipo de datos.
 
@@ -81,11 +95,10 @@ Por ejemplo, si busca en Google "etiquetas de fecha de trazado de matlab", el pr
 
 [covid_data.mat](http://purl.org/matlabintermedio/proyectofinal/data)
 
-Nota: el archivo mat se ha actualizado para incluir datos hasta el 31 de octubre de 2020.
 
 ### Cómo enviar proyecto final:
 
-El repositorio debe actualizarse de forma continua, creando los commits necesarios. Su proyecto debe contener todos los archivos MATLAB necesarios para ejecutar su programa . Normalmente, tendría tres archivos: el archivo de la aplicación (.mlapp), el archivo m con la definición de clase de los objetos de su país / estado y el archivo .mat con los datos. Esto último es útil para asegurarse de que se revise su programa con los datos con los que lo probó, ya que se planea actualizar el archivo de datos regularmente a medida que avanza el tiempo. 
+El repositorio debe actualizarse de forma continua, creando los commits necesarios. Su proyecto debe contener todos los archivos MATLAB necesarios para ejecutar su programa . Normalmente, tendría tres archivos: el archivo de la aplicación (.mlapp), el archivo m con la definición de clase de los objetos de su país / estado y el archivo .mat con los datos. Esto último es útil para asegurarse de que se revise su programa con los datos con los que lo probó. 
 
 
 

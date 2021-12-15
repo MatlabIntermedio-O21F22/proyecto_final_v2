@@ -13,12 +13,12 @@
 
 ## Flujo de Trabajo
 1. Clona este repositorio en tu máquina local    
-2. Edite los archivos que sean necesario y complete todas las tareas semanales que se señalan en los entregables.
+2. Edite los archivos que sean necesarios y complete todas las tareas semanales que se señalan en los entregables.
 3. Confirme sus cambios y envíelos a github. 
 
 
 ## Entregables
-- **Semana 2 (16 dic.):**  Selección de funete de datos, lectura de datos, definición de clases, visualización de graficas 
+- **Semana 2 (16 dic.):**  Selección de fuente de datos, lectura de datos, definición de clases, visualización de graficas 
 - **Semana 4 (6 ene.):**   Implementación de widgets 1, 2, 3
 - **Semana 6, (20 ene.):** Implementación de widgets 4, 5
 - **Semana 8, (3 feb.):**  Implementación de widget 6, pruebas, documentación, defensa de proyecto.
@@ -28,6 +28,7 @@
 - data/
 - src/
 - gui/
+- livescript/
 - main.mlapp
 
 ## Instrucciones
@@ -55,11 +56,14 @@ Si no sabe qué conjunto de datos usar, aquí hay un par de enlaces para comenza
 
 El siguiente planteamiento lo debe ajustar a su fuente de datos. El ejemplo que se presenta correponde a datos de la pandemia COVID-19.
 
-Los datos (obtenidos del Centro de recursos sobre coronavirus de la Universidad Johns Hopkins) están disponibles en el archivo [.mat](http://purl.org/matlabintermedio/proyectofinal/data) adjunto. Una vez que lo cargue, obtendrá una única variable llamada covid_data que es una gran matriz de celdas. (¡Asegúrese de que su aplicación cargue el archivo!) Contiene los recuentos globales de casos y muertes por país, estado y fecha. Específicamente, la primera fila de la matriz de celdas especifica lo que contiene cada columna: país y estado seguidos de una serie de fechas que comienzan en "22/1/20", es decir, 22 de enero de 2020. No codifique la fecha de finalización, ya que anticipamos actualizar los datos regularmente a medida que avanza el tiempo. Cada celda de datos para un país y una fecha determinada contiene un vector de dos elementos: el primer elemento es el recuento acumulativo de casos, mientras que el segundo es el número acumulativo de muertes.
+Los datos (obtenidos del Centro de recursos sobre coronavirus de la Universidad Johns Hopkins) utilizados en la demostración están disponibles en el archivo [.mat](http://purl.org/matlabintermedio/proyectofinal/data) adjunto, usted debe utilizar una fuente de datos diferente (contagios, muertes) desde algún servicio que brinde los datos en formato json, csv, xls y convertirlo al formato .mat 
 
-Su programa debe convertir estos datos en un conjunto de objetos: un objeto por país y estado. Los estados deben estar contenidos por sus países. Los países se pueden almacenar en un vector de objetos de países en la propia aplicación. Otra forma es crear una instancia de la misma clase que usa para países y estados, llamarla global y hacer que almacene todos los países. Entonces, la aplicación contendría el objeto global único como una propiedad. Esta opción crearía una jerarquía de 3 niveles: el objeto global almacena datos para todo el mundo y un vector de objetos de país, mientras que los objetos de países que tienen estados en la base de datos almacenarían sus estados correspondientes. Nuevamente, puede usar la misma definición de clase para los tres tipos de objetos porque almacenan esencialmente el mismo tipo de datos.
+La data que se proporciona como referencia contiene los recuentos globales de casos y muertes (ejemplo) por país, estado y fecha. Específicamente, la primera fila de la matriz de celdas especifica lo que contiene cada columna: país y estado seguidos de una serie de fechas que comienzan en "22/1/20", es decir, 22 de enero de 2020. No codifique la fecha de finalización, ya que anticipamos actualizar los datos regularmente a medida que avanza el tiempo. Cada celda de datos para un país y una fecha determinada contiene un vector de dos elementos: el primer elemento es el recuento acumulativo de casos, mientras que el segundo es el número acumulativo de muertes.
 
-La interfaz gráfica de usuario de su programa debe contener varios widgets:
+Su programa debe cargar estos datos en un dataframe y filtrar la información en función de lo que solicite el usuario.
+
+La interfaz gráfica de usuario de su programa debe contener varios widgets (ajustar a la fuente de datos que seleccione), para el ejemplo de muestra se desarrollo los siguientes requerimientos:
+
 1. Un área única donde grafica los datos. El título de la gráfica debe ser informativo mostrando qué país / estado se muestra y también indicando las opciones relevantes que se utilizaron para generar la gráfica. (Ver más abajo). Las etiquetas x deben ser fechas. Debe implementar diferentes escalas y para los dos gráficos de la izquierda y la derecha, como se muestra a continuación.
 2. Un cuadro de lista que muestra todos los países disponibles. El primer elemento debe llamarse "Global" y seleccionarlo debe trazar los datos globales. Esto no está contenido en la base de datos, por lo que deberá calcularlo.
 3. Otro cuadro de lista que muestra todos los estados del país seleccionado actualmente. La primera opción debería ser "Todos". Como la mayoría de los países no tienen estados, regiones, territorios o provincias asociados con ellos en la base de datos, esta será la única opción para ellos. Al seleccionarlo, se deberían mostrar los datos del propio país. Hay dos tipos de países con estados en la base de datos. Australia, Canadá, China y Estados Unidos tienen todos sus estados, provincias, etc. enumerados. Otros países como el Reino Unido, los Países Bajos o Dinamarca no están subdivididos, pero tienen una serie de territorios de ultramar enumerados. Por ejemplo, el Reino Unido no se divide en Inglaterra, Escocia, Gales e Irlanda del Norte, pero tiene territorios adicionales, como las Islas Malvinas, en la lista.
@@ -93,12 +97,9 @@ También tenga en cuenta que el curso no ha cubierto una serie de cosas que nece
 
 Por ejemplo, si busca en Google "etiquetas de fecha de trazado de matlab", el primer resultado, al menos para mí, es esta página . Contiene todo lo que necesita para configurar las etiquetas de fecha como se muestra arriba. La página no muestra un ejemplo que coincida exactamente, por lo que aún tiene trabajo por hacer. Bienvenidos a la programación.
 
-[covid_data.mat](http://purl.org/matlabintermedio/proyectofinal/data)
-
-
 ### Cómo enviar proyecto final:
 
-El repositorio debe actualizarse de forma continua, creando los commits necesarios. Su proyecto debe contener todos los archivos MATLAB necesarios para ejecutar su programa . Normalmente, tendría tres archivos: el archivo de la aplicación (.mlapp), el archivo m con la definición de clase de los objetos de su país / estado y el archivo .mat con los datos. Esto último es útil para asegurarse de que se revise su programa con los datos con los que lo probó. 
+El repositorio debe actualizarse de forma continua, creando los commits necesarios. Su proyecto debe contener todos los archivos MATLAB necesarios para ejecutar su programa . Normalmente, tendría tres archivos: el archivo de la aplicación (.mlapp), el archivo m con la definición de clase de los objetos (ajustar a la fuente de datos) y el archivo .mat con los datos. Esto último es útil para asegurarse de que se revise su programa con los datos con los que lo probó. 
 
 
 
